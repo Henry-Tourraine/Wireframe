@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+      $("#header").load("header.html"); 
+    });
+    $(function(){
+      $("#footer").load("footer.html"); 
+    });
+            </script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @media screen and (max-width: 640px) {
+            .arrow-left.icon {
+            position: absolute;
+            margin-left: -70%;
+            margin-top: 5% !important;
+            width: 0;
+            height: 0.4em;
+            background-color: currentColor;
+            }
+
+            .arrow-left.icon:before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: -5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            border-top: solid 0.5em currentColor;
+            border-right: solid 0.5em currentColor;
+            
+            animation: flot-left 1s ease-in-out infinite alternate-reverse;  
+            }
+
+            .arrow-right.icon {
+            position: absolute;
+            margin-left: 70%;
+            margin-top: 5% !important;
+            width: 0px;
+            height: 0.4em;
+            background-color: currentColor;
+            
+           
+            }
+
+            .arrow-right.icon:before {
+            content: '';
+            position: absolute;
+            border-radius: 5px;
+            right: 0px;
+            top: -5px;
+            width: 10px;
+            height: 10px;
+            border-top: solid 0.5em currentColor;
+            border-right: solid 0.5em currentColor;
+            
+            
+            animation: flot-right 1s ease-in-out infinite alternate-reverse;  
+              
+            }
+        }
+        body{
+            margin:0;
+            padding:0;
+            background-color: lightgray;
+         
+        }
+        .wrap-1{
+            max-width: 100%;
+            padding:  5% 10% 0% 10%;
+        }
+        .wrap-2{
+            margin-right: auto;
+            margin-left: auto;
+            display:flex !important;
+            justify-content: center;
+        }
+        .produit{
+            border-radius: 4%;
+            margin: 0 auto;
+            background-color: white;
+            margin-left:auto;
+            margin-right:auto;
+            max-width:fit-content;
+            display: flex;
+            flex-flow: wrap row;
+            margin: 20px;
+
+
+        }
+        .produit *{
+            margin: 20px;
+        }
+        .img{
+            
+            width: 500px;
+            height: 500px;
+            margin-top:0.4em;
+            margin-bottom: auto;
+            background-color: rgb(104, 104, 104);
+            border-radius: 2%;
+            font-size: 3em;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .desc{
+            width: 350px;
+            border-radius: 2%;
+            background-color: rgb(170, 170, 170); 
+        }
+        ul{
+            display: block;
+            padding:0;
+
+        }
+        .price-quantity{
+            display:flex;
+            flex-flow: wrap row;
+            justify-content: space-around;
+        }
+        .add-to-cart{
+            
+            height: 3em;
+            border-radius: 5px;
+            border: none;
+            padding-left: 3em;
+            padding-right: 3em;
+        }
+        .button{
+            display: flex;
+            margin:0;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+
+        .picto{
+            display:flex;
+            justify-content: space-around;
+            margin:0;
+            
+        }
+        .picto *{
+            background-color: rgb(63, 63, 63);
+            width: 4em;
+            height: 4em;
+        }
+        .description-long{
+            background-color: white;
+            width: 100%;
+            padding: 20px;
+            border-radius: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        
+
+        }
+        table, table *{
+            border: solid black 1px;
+            
+        }
+        .suggestions{
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            width: 100%;
+            border-radius: 5px;
+            margin: 20px;
+            
+        }
+        .suggestions div{
+            width: 4em;
+            height: 4em;
+            background-color: grey;
+
+        }
+        .retour{
+            display: block;
+            margin: 1em auto 2em auto;
+            font-size: 2em;
+            border-radius: 10px;
+            transform: translate(50%, 0%);
+
+        }
+        .arrow-left.icon {
+            position: absolute;
+            margin-left: -70%;
+            margin-top: 1.5%;
+            width: 0;
+            height: 0.4em;
+            background-color: currentColor;
+            }
+
+            .arrow-left.icon:before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: -5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            border-top: solid 0.5em currentColor;
+            border-right: solid 0.5em currentColor;
+            
+            animation: flot-left 1s ease-in-out infinite alternate-reverse;  
+            }
+
+            .arrow-right.icon {
+            position: absolute;
+            margin-left: 70%;
+            margin-top: 1.5%;
+            width: 0px;
+            height: 0.4em;
+            background-color: currentColor;
+            
+           
+            }
+
+            .arrow-right.icon:before {
+            content: '';
+            position: absolute;
+            border-radius: 5px;
+            right: 0px;
+            top: -5px;
+            width: 10px;
+            height: 10px;
+            border-top: solid 0.5em currentColor;
+            border-right: solid 0.5em currentColor;
+            
+            
+            animation: flot-right 1s ease-in-out infinite alternate-reverse;  
+              
+            }
+
+            @keyframes flot-right{
+             
+                0%{transform: translate(0px, -20%) rotate(45deg);-webkit-transform: translate(0px, -20%) rotate(45deg);}
+                100%{transform: translate(0px, 10%) rotate(45deg);-webkit-transform: translate(0px, 10%) rotate(45deg);
+                    }
+            }
+            @keyframes flot-left{
+             
+             0%{transform: translate(0px, -20%) rotate(-135deg);-webkit-transform: translate(0px, -20%) rotate(-135deg);}
+             100%{transform: translate(0px, 10%) rotate(-135deg);-webkit-transform: translate(0px, 10%) rotate(-135deg);
+                 }
+         }
+
+    </style>
+    <div id="header"></div>
+    <div class="wrap-1">
+    <div class="wrap-2">
+        <div class="produit">
+            <div class="img" >IMAGE</div>
+            <div class="desc">
+                <h1 class="title">TITRE</h1>
+                <ul>
+                    <li>propriété-1</li>
+                    <li>propriété-2</li>
+                    <li>propriété-3</li>
+                </ul>
+                <div class="price-quantity">
+                    <p>prix</p>
+                    <p>quantité</p>
+                </div>
+                <div class='button'>
+                <button class="add-to-cart">ajouter au panier</button>
+                <button class="add-to-cart">commander</button>
+                </div>
+                <div class="picto">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="description-long">
+        <h1>DESCRIPTION</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue nulla, accumsan in pulvinar a, tincidunt quis libero. Aenean tincidunt sapien libero, vel eleifend dolor ultrices ac. Aenean molestie feugiat purus, at volutpat ex porta sit amet. Ut eu suscipit risus. Praesent iaculis ornare dolor, non blandit risus ullamcorper vitae. Ut quis magna vitae quam scelerisque laoreet. Sed gravida ut neque id aliquet. Donec et nunc tellus. In hac habitasse platea dictumst. Donec ante odio, molestie at felis id, tristique vestibulum massa. Donec at malesuada odio. Fusce bibendum lorem a orci dapibus lobortis.
+
+Quisque porta risus vitae nunc efficitur porta ac vitae urna. Maecenas ornare justo ex, nec molestie mi hendrerit id. Quisque posuere egestas lorem sed ullamcorper. Fusce at posuere ipsum. Integer tincidunt id neque ut finibus. Pellentesque gravida est odio, ac fringilla orci pulvinar eget. Nullam id mi pellentesque, viverra enim eget, tincidunt velit. Maecenas dapibus elementum mattis. Vivamus dignissim pellentesque diam ac dignissim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras sed malesuada lacus.
+
+Suspendisse ex ante, suscipit non molestie viverra, molestie eget nibh. Mauris auctor mollis commodo. Ut euismod dui a felis pellentesque condimentum. Morbi rhoncus sit amet metus eu dapibus. Nullam convallis ex sed mauris vestibulum volutpat. In gravida quam mi. Quisque ultricies quis lorem vel sollicitudin.
+
+Aliquam venenatis ante et convallis feugiat. Cras at tristique ante, in tempus sem. Donec mollis sapien a justo venenatis, sit amet consequat enim fringilla. Etiam odio nulla, euismod ut eleifend pretium, malesuada bibendum nulla. Ut varius ipsum ex, vitae lobortis turpis aliquet sed. Sed dignissim, ligula nec elementum bibendum, tortor tellus lacinia sem, quis elementum nulla elit in eros. Aenean et vehicula mauris. Aenean ut magna non ex tempor eleifend. Pellentesque dapibus massa diam, eget porta ipsum pulvinar in. Suspendisse auctor enim sit amet quam vestibulum, at facilisis mauris aliquam. Duis a turpis venenatis, commodo quam ut, dictum lacus. Praesent in pulvinar ipsum, a tempus est. Donec dui lectus, interdum id nibh nec, vehicula facilisis nibh. Mauris ultricies massa sit amet varius tempor.
+
+Phasellus imperdiet, arcu ac vestibulum porta, lectus dui dignissim turpis, eget ultricies lorem nisl eu augue. Quisque leo sem, egestas at facilisis sit amet, ultrices in turpis. Quisque interdum dapibus dui in volutpat. Pellentesque sit amet massa at diam mattis ultrices. Donec commodo, quam in gravida mattis, nisi ante dignissim urna, nec condimentum lectus urna tincidunt magna. Maecenas venenatis sagittis urna. Etiam quis euismod erat. Mauris id purus condimentum, vulputate risus ultricies, posuere odio. Nunc feugiat tellus id orci commodo vehicula.
+<caption>Propriétés techniques</caption>        
+</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Propriété 1</th>
+                <th>Propriété 2</th>
+                <th>Propriété 3</th>
+                <th>Propriété 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+</div>
+<div class="suggestions">
+    <div class="arrow-right icon"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="arrow-left icon"></div>
+</div>
+</div>
+    <button class="retour" onClick="goBack()">Retour</button>
+<div id="footer"></div>
+</body>
+</html>

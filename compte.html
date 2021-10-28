@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script crossorigin="null">
+        $(function(){
+      $("#header").load("header.html"); 
+    });
+   
+    
+    $(document).ready(function () {
+    for (var i = 1; i <= 4; i++) {
+        $('.wait').append($('<div/>',{ "class": "product "+i })
+        .append($('<div/>',{ "class": "title "+i }).append("titre"))
+        .append($('<div/>',{ "class": "price "+i }).append("prix"))
+        
+        .append($('<div/>',{ "class": "wrapper "+i }).append($('<div/>',{ "class": "quantity "+i }).append("quantité")).append($('<div/>',{ "class": "number "+i }).append($('<div/>',{ "class": "add "+i })).append($('<div/>',{ "class": "remove "+i }))))
+        );
+    } 
+    for (var i = 1; i <= 8; i++) {
+        $('.history').append($('<div/>',{ "class": "product "+i })
+        .append($('<div/>',{ "class": "title "+i }).append("titre"))
+        .append($('<div/>',{ "class": "price "+i }).append("prix"))
+        
+        .append($('<div/>',{ "class": "wrapper "+i }).append($('<div/>',{ "class": "quantity "+i }).append("quantité")).append($('<div/>',{ "class": "number "+i })))
+        );
+    }
+});
+            </script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       
+        .retour{
+            display: block;
+            margin: 1em auto 2em auto;
+            font-size: 2em;
+            border-radius: 10px;
+            transform: translate(50%, 0%);
+
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            color: black;
+        }
+        
+        
+        .w li{
+            border-bottom: solid black 1px;
+            list-style: none;
+            color: black;
+            padding: 2em;
+        }
+        .w a{
+            text-decoration: none;
+            color: black;
+        }
+        .color, .color a{
+            background-color: grey;
+            color: white;
+        }
+        .w ul{
+            width: 20%;
+        }
+        .w li:hover{
+            background-color: grey;
+        }
+        .w{
+            display: flex;
+            flex-flow: wrap row;
+            
+            justify-content: space-around;
+        }
+        .w *{
+            padding: 1em;
+        }
+        .account2{
+            padding: 20px;
+            display: flex;
+        }
+        .account2 input{
+            outline: none;
+            border: none;
+
+        }
+        .account2 input:focus{
+            outline: none;
+            border: none;
+            
+        }
+        .account2 form{
+            background: rgb(219, 219, 219);
+            padding: 2em;
+            border-radius: 5%;
+        }
+        input{
+            border-radius: 10%;
+        }
+    </style>
+    
+    <div id="header"></div>
+    <div class="w">
+
+   
+    <ul>
+        <li><a href="#suivi">Suivi de commande</a></li>
+        <li><a href="#historique">Historique</a></li>
+        <li class="color" style="word-break: break-all"><a href="#info">Informations personnelles</a></li>
+    </ul>
+    <div class="account2">
+        <div>
+        <h2>Informations personnelles</h2>
+        <form action="">
+            <label for="">Civilité</label><br>
+            <input type="radio" placeholder="Mr"></input><br>
+            <label for="">Nom</label><br>
+            <input type="text" placeholder="SMIC"></input><br>
+            <label for="">Prénom</label><br>
+            <input type="text" placeholder="Will"></input><br>
+            <label for="">Adresse mail</label><br>
+            <input type="text" placeholder="Will.Smic@jaimelargent.fr"></input><br>
+            <label for="">Adresse mail de secours</label><br>
+            <input type="text" placeholder="Will.Smic@jaimeenormementlargent.fr"> </input><br>
+        </form>
+    </div>
+    <div>
+        <h2>Informations de livraison</h2>
+        <form action="">
+            <label for="">Adresse</label><br>
+            <input type="text" placeholder="6 rue du billet vert"></input><br>
+            <label for="">Code postal</label><br>
+            <input type="text" placeholder="66 666"></input><br>
+            <label for="">Ville</label><br>
+            <input type="text" placeholder="MontFrique"></input><br>
+            <label for="">Pays</label><br>
+            <input type="text" placeholder="France"></input><br>
+            <label for="">Instruction de livraison</label><br>
+            <input type="text" placeholder="Interphone"> </input><br>
+        </form>
+    </div>
+    <div>
+        <h2>Méthodes de paiement</h2>
+        <form action="">
+            <label for="">Carte bancaire enregistrée</label>
+            <input type="text" placeholder="4560 4560 ..."></input><br>
+            <p><button>+</button>ajouter moyen de paiement</p>
+            
+        </form>
+    </div>
+    </div>
+</div>
+    
+    <button class="retour" onClick="goBack()">Retour</button>
+    
+    
